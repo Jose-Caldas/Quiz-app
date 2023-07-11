@@ -6,9 +6,9 @@ import Quiz from '../img/quiz.svg'
 function Welcome() {
   return (
     <div className="flex flex-col items-center justify-center p-5">
-      <h1 className="md:text-3xl text-2xl">Quiz de Programação</h1>
-      <h2 className="md:text-2xl text-xl mb-5 text-zinc-800">Seja bem-vindo</h2>
-      <p className="mb-4 md:text-base text-sm text-zinc-900">
+      <h1 className="md:text-3xl text-2xl mb-5">Quiz de Programação</h1>
+      <h2 className="md:text-2xl text-xl mb-3 text-zinc-800">Seja bem-vindo</h2>
+      <p className="mb-4 md:text-base text-sm text-purple-900">
         Click no botão abaixo para começar:
       </p>
       <Link
