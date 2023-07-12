@@ -1,9 +1,14 @@
-import React from 'react'
+'use client'
+import React, { useContext } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Quiz from '../img/quiz.svg'
+import { QuizContext } from '@/context/QuizContext'
+import { changeGameStage } from './Actions'
 
 function Welcome() {
+  const { state, dispatch } = useContext(QuizContext)
+
   return (
     <div className="flex flex-col items-center justify-center p-5">
       <h1 className="md:text-3xl text-2xl mb-5">Quiz de Programação</h1>

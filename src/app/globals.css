@@ -18,7 +18,7 @@ button {
 }
 
 .container {
-  @apply min-h-screen flex items-center justify-center flex-col p-5;
+  @apply min-h-screen flex items-center justify-center flex-col px-5;
 }
 
 .title {
