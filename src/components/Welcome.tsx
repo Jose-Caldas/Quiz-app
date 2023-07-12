@@ -4,10 +4,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Quiz from '../img/quiz.svg'
 import { QuizContext } from '@/context/QuizContext'
-import { changeGameStage } from './Actions'
+import { changeStage, nextQuestion } from './Actions'
 
 function Welcome() {
   const { state, dispatch } = useContext(QuizContext)
+  console.log(state.gameStage)
 
   return (
     <div className="flex flex-col items-center justify-center p-5">
@@ -16,12 +17,12 @@ function Welcome() {
       <p className="mb-4 md:text-base text-sm text-purple-900">
         Click no botão abaixo para começar:
       </p>
-      <Link
-        href={`/quiz`}
+      <button
+        onClick={() => changeStage(dispatch)}
         className="bg-purple-700 text-white px-5 py-2 rounded-md hover:bg-purple-600 transition-colors"
       >
         Iniciar
-      </Link>
+      </button>
       <Image
         src={Quiz}
         width={500}

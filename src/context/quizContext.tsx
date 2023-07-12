@@ -9,6 +9,7 @@ export enum ActionType {
   QUESTION_INCREMENT = 'QUESTION_INCREMENT',
   QUESTION_DECREMENT = 'QUESTION_DECREMENT',
   CHANGE_STAGE = 'CHANGE_STAGE',
+  REORDER_QUESTIONS = 'REORDER_QUESTIONS',
 }
 
 const stages = ['Start', 'Playing', 'End']
@@ -53,22 +54,38 @@ const quizReducer = (
         ...state,
         questions,
       }
-
-    case ActionType.QUESTION_INCREMENT:
-      return {
-        ...state,
-        currentQuestion: state.currentQuestion + 1,
-      }
-    case ActionType.QUESTION_DECREMENT:
-      return {
-        ...state,
-        currentQuestion: state.currentQuestion - 1,
-      }
-
     case ActionType.CHANGE_STAGE:
       return {
         ...state,
         gameStage: stages[1],
+      }
+
+    case ActionType.QUESTION_INCREMENT:
+      const nextQuestion = state.currentQuestion + 1
+      let endGame = false
+      if (!questions[nextQuestion]) {
+        endGame = true
+      }
+      return {
+        ...state,
+        currentQuestion: nextQuestion,
+        gameStage: endGame ? stages[2] : state.gameStage,
+      }
+    case ActionType.QUESTION_DECREMENT:
+      const prevQuestion = state.currentQuestion - 1
+      return {
+        ...state,
+        currentQuestion: prevQuestion,
+      }
+
+    case ActionType.REORDER_QUESTIONS:
+      console.log('reordenou')
+      const reorderedQuestions = questions.sort(() => {
+        return Math.random() - 0.5
+      })
+      return {
+        ...state,
+        questions: reorderedQuestions,
       }
 
     default:

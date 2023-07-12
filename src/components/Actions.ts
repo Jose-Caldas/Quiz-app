@@ -9,8 +9,12 @@ const prevQuestion = (dispatch: Dispatch<ReducerAction>) => {
   dispatch({ type: ActionType.QUESTION_DECREMENT })
 }
 
-const changeGameStage = (dispatch: Dispatch<ReducerAction>) => {
+const changeStage = (dispatch: Dispatch<ReducerAction>) => {
   dispatch({ type: ActionType.CHANGE_STAGE })
 }
 
-export { nextQuestion, prevQuestion, changeGameStage }
+const reorderQuestions = (dispatch: Dispatch<ReducerAction>) => {
+  dispatch({ type: ActionType.REORDER_QUESTIONS })
+}
+
+export { nextQuestion, prevQuestion, changeStage, reorderQuestions }
