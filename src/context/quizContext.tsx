@@ -10,6 +10,8 @@ export enum ActionType {
   QUESTION_DECREMENT = 'QUESTION_DECREMENT',
   CHANGE_STAGE = 'CHANGE_STAGE',
   REORDER_QUESTIONS = 'REORDER_QUESTIONS',
+  NEW_GAME = 'NEW_GAME',
+  CHECK_ANSWER = 'CHECK_ANSWER',
 }
 
 const stages = ['Start', 'Playing', 'End']
@@ -18,16 +20,24 @@ export type InitialStateType = {
   questions: IQuestion[]
   currentQuestion: number
   gameStage: string
+  score: number
+  answerSelected: boolean
 }
 
 const initialState = {
   questions,
   currentQuestion: 0,
   gameStage: stages[0],
+  score: 0,
+  answerSelected: false,
 }
 
 export type ReducerAction = {
   type: ActionType
+  payload?: {
+    answer: string
+    option: string
+  }
 }
 
 export interface QuizContextProps {
@@ -70,6 +80,7 @@ const quizReducer = (
         ...state,
         currentQuestion: nextQuestion,
         gameStage: endGame ? stages[2] : state.gameStage,
+        answerSelected: false,
       }
     case ActionType.QUESTION_DECREMENT:
       const prevQuestion = state.currentQuestion - 1
@@ -86,6 +97,23 @@ const quizReducer = (
       return {
         ...state,
         questions: reorderedQuestions,
+      }
+
+    case ActionType.NEW_GAME:
+      return initialState
+
+    case ActionType.CHECK_ANSWER:
+      if (state.answerSelected) return state
+
+      const answer = action.payload?.answer
+      const option = action.payload?.option
+      let correctAnswer = 0
+
+      if (answer === option) correctAnswer = 1
+      return {
+        ...state,
+        score: state.score + correctAnswer,
+        answerSelected: true,
       }
 
     default:

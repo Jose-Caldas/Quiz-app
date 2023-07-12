@@ -24,3 +24,11 @@ button {
 .title {
   @apply text-purple-600 text-2xl;
 }
+
+.correct {
+  @apply bg-green-400 text-zinc-100 font-bold;
+}
+
+.wrong {
+  @apply bg-purple-800/5 text-zinc-100;
+}
