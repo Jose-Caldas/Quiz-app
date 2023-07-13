@@ -23,7 +23,9 @@ const Result = () => {
         </span>
         perguntas.
       </p>
-      <Image src={Welldone} width={400} height={300} alt="Game Over image" />
+      <div className="max-w-[400px] max-h-[400px]">
+        <Image src={Welldone} alt="Game Over image" priority />
+      </div>
       <button
         onClick={() => newGame(dispatch)}
         title="Reiniciar"

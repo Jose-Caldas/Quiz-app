@@ -90,7 +90,6 @@ const quizReducer = (
       }
 
     case ActionType.REORDER_QUESTIONS:
-      console.log('reordenou')
       const reorderedQuestions = questions.sort(() => {
         return Math.random() - 0.5
       })

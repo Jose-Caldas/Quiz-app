@@ -1,5 +1,7 @@
 import { useContext } from 'react'
 import { QuizContext } from '@/context/QuizContext'
+import Wrong from '../img/wrong.svg'
+import Check from '../img/check.svg'
 
 type OptionProps = {
   option: string
@@ -8,11 +10,12 @@ type OptionProps = {
 }
 
 import React from 'react'
+import Image from 'next/image'
 
 function Option({ option, answer, selectOption }: OptionProps) {
   const { state } = useContext(QuizContext)
   return (
-    <div className="flex flex-col" onClick={selectOption}>
+    <div className="relative  flex flex-col" onClick={selectOption}>
       <p
         className={`text-zinc-600 mb-2 p-3 border bg-white text-base ${
           !state.answerSelected && 'hover:bg-zinc-100'
@@ -21,6 +24,20 @@ function Option({ option, answer, selectOption }: OptionProps) {
         } ${state.answerSelected && option !== answer ? 'wrong' : ''}`}
       >
         {option}
+        <span
+          className={`opacity-0 absolute right-4 ${
+            state.answerSelected && option === answer && 'opacity-100'
+          }`}
+        >
+          <Image src={Check} alt="Check Icon" />
+        </span>
+        <span
+          className={`opacity-0 absolute right-4 text-red-600 ${
+            state.answerSelected && option !== answer && 'opacity-100'
+          }`}
+        >
+          <Image src={Wrong} alt="Wrong Icon" />
+        </span>
       </p>
     </div>
   )

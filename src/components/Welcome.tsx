@@ -8,7 +8,6 @@ import { changeStage, nextQuestion } from './Actions'
 
 function Welcome() {
   const { state, dispatch } = useContext(QuizContext)
-  console.log(state.gameStage)
 
   return (
     <div className="flex flex-col items-center justify-center p-5">
@@ -24,12 +23,9 @@ function Welcome() {
       >
         Iniciar
       </button>
-      <Image
-        src={Quiz}
-        width={500}
-        height={500}
-        alt="Imagem de Início do Quiz"
-      />
+      <div className="max-w-[600px] max-h-[600px]">
+        <Image src={Quiz} alt="Imagem de Início do Quiz" priority />
+      </div>
     </div>
   )
 }
