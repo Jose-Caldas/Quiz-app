@@ -14,7 +14,9 @@ function Option({ option, answer, selectOption }: OptionProps) {
   return (
     <div className="flex flex-col" onClick={selectOption}>
       <p
-        className={`text-zinc-700 mb-2 py-3 px-4  rounded-md cursor-pointer transition-colors ${
+        className={`text-zinc-600 mb-2 p-3 border bg-white text-base ${
+          !state.answerSelected && 'hover:bg-zinc-100'
+        }  rounded-md cursor-pointer transition-colors ${
           state.answerSelected && option === answer ? 'correct' : ''
         } ${state.answerSelected && option !== answer ? 'wrong' : ''}`}
       >

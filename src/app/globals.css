@@ -9,7 +9,7 @@
 }
 
 body {
-  background: #f0f0f0;
+  background: #fafafa;
 }
 
 button {
@@ -18,17 +18,17 @@ button {
 }
 
 .container {
-  @apply min-h-screen flex items-center justify-center flex-col px-5;
+  @apply min-h-screen flex items-center justify-center flex-col p-5;
 }
 
 .title {
-  @apply text-purple-600 text-2xl;
+  @apply text-purple-600 text-xl md:text-2xl mb-6;
 }
 
 .correct {
-  @apply bg-green-400 text-zinc-100 font-bold;
+  @apply bg-green-400 text-white font-bold;
 }
 
 .wrong {
-  @apply bg-purple-800/5 text-zinc-100;
+  @apply bg-purple-800/5 text-zinc-300;
 }
