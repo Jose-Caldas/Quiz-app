@@ -52,14 +52,21 @@ export default function Quiz() {
         ))}
       </div>
       <div>
-        {state.answerSelected && (
-          <button
-            className="text-white bg-purple-600 hover:bg-purple-500 py-2 px-3 rounded-md"
-            onClick={handleNextQuestion}
-          >
-            Continuar
-          </button>
-        )}
+        <button
+          className={`text-white bg-purple-600 hover:bg-purple-500 py-2 px-3 rounded-md ${
+            !state.answerSelected && 'opacity-60 cursor-not-allowed'
+          }`}
+          onClick={handleNextQuestion}
+          disabled={!state.answerSelected}
+          title={`${
+            !state.answerSelected
+              ? 'Escolha uma opção para continuar'
+              : 'Continuar'
+          }`}
+        >
+          Continuar
+        </button>
+
         <Image src={Category} alt="Image to Playing" width={300} height={300} />
       </div>
       <Link href={`/`}>Home</Link>

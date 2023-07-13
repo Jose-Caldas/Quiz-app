@@ -20,6 +20,7 @@ function Welcome() {
       <button
         onClick={() => changeStage(dispatch)}
         className="bg-purple-700 text-white px-5 py-2 rounded-md hover:bg-purple-600 transition-colors"
+        title="Iniciar"
       >
         Iniciar
       </button>

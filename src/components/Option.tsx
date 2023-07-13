@@ -20,7 +20,6 @@ function Option({ option, answer, selectOption }: OptionProps) {
       >
         {option}
       </p>
-      <p className="text-red-800">{answer}</p>
     </div>
   )
 }

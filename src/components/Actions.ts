@@ -21,18 +21,4 @@ const newGame = (dispatch: Dispatch<ReducerAction>) => {
   dispatch({ type: ActionType.NEW_GAME })
 }
 
-// const checkAnswer = (dispatch: Dispatch<ReducerAction>) => {
-//   dispatch({
-//     type: ActionType.CHECK_ANSWER,
-//     payload: {},
-//   })
-// }
-
-export {
-  nextQuestion,
-  prevQuestion,
-  changeStage,
-  reorderQuestions,
-  newGame,
-  //   checkAnswer,
-}
+export { nextQuestion, prevQuestion, changeStage, reorderQuestions, newGame }
