@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Quiz from '../img/quiz.svg'
-import { QuizContext } from '@/context/QuizContext'
+import { QuizContext } from '@/context/quizContext'
 import { changeStage, nextQuestion } from './Actions'
 
 function Welcome() {

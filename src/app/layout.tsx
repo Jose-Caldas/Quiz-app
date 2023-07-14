@@ -1,4 +1,4 @@
-import { QuizContextProvider } from '@/context/QuizContext'
+import { QuizContextProvider } from '@/context/quizContext'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'

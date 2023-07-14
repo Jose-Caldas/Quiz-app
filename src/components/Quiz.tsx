@@ -1,7 +1,7 @@
 'use client'
 
 import { useContext, useState } from 'react'
-import { ActionType, QuizContext } from '@/context/QuizContext'
+import { ActionType, QuizContext } from '@/context/quizContext'
 import Link from 'next/link'
 import Image from 'next/image'
 import Category from '../img/category.svg'

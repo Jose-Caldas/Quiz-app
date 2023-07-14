@@ -1,5 +1,5 @@
 import { Dispatch } from 'react'
-import { ActionType, ReducerAction } from '../context/QuizContext'
+import { ActionType, ReducerAction } from '../context/quizContext'
 
 const nextQuestion = (dispatch: Dispatch<ReducerAction>) => {
   dispatch({ type: ActionType.QUESTION_INCREMENT })

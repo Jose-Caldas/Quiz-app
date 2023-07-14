@@ -1,6 +1,6 @@
 'use client'
 import React, { useContext, useEffect } from 'react'
-import { QuizContext } from '@/context/QuizContext'
+import { QuizContext } from '@/context/quizContext'
 import { reorderQuestions } from './Actions'
 import Welcome from './Welcome'
 import Quiz from './Quiz'
