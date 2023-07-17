@@ -2,15 +2,14 @@ import { useContext } from 'react'
 import { QuizContext } from '@/context/quizContext'
 import Wrong from '../img/wrong.svg'
 import Check from '../img/check.svg'
+import React from 'react'
+import Image from 'next/image'
 
 type OptionProps = {
   option: string
   answer: string
   selectOption: () => void
 }
-
-import React from 'react'
-import Image from 'next/image'
 
 function Option({ option, answer, selectOption }: OptionProps) {
   const { state } = useContext(QuizContext)

@@ -2,11 +2,7 @@ import { Dispatch } from 'react'
 import { ActionType, ReducerAction } from '../context/quizContext'
 
 const nextQuestion = (dispatch: Dispatch<ReducerAction>) => {
-  dispatch({ type: ActionType.QUESTION_INCREMENT })
-}
-
-const prevQuestion = (dispatch: Dispatch<ReducerAction>) => {
-  dispatch({ type: ActionType.QUESTION_DECREMENT })
+  dispatch({ type: ActionType.NEXT_QUESTION })
 }
 
 const changeStage = (dispatch: Dispatch<ReducerAction>) => {
@@ -20,5 +16,8 @@ const reorderQuestions = (dispatch: Dispatch<ReducerAction>) => {
 const newGame = (dispatch: Dispatch<ReducerAction>) => {
   dispatch({ type: ActionType.NEW_GAME })
 }
+const newMessage = (dispatch: Dispatch<ReducerAction>) => {
+  dispatch({ type: ActionType.CHANGE_MESSAGE })
+}
 
-export { nextQuestion, prevQuestion, changeStage, reorderQuestions, newGame }
+export { nextQuestion, changeStage, reorderQuestions, newGame, newMessage }

@@ -5,7 +5,7 @@ import { ActionType, QuizContext } from '@/context/quizContext'
 import Link from 'next/link'
 import Image from 'next/image'
 import Category from '../img/category.svg'
-import { nextQuestion, prevQuestion } from './Actions'
+import { nextQuestion } from './Actions'
 import Option from './Option'
 
 export default function Quiz() {
@@ -23,11 +23,6 @@ export default function Quiz() {
   function handleNextQuestion() {
     if (state.currentQuestion < state.questions.length) {
       nextQuestion(dispatch)
-    }
-  }
-  function handlePrevQuestion() {
-    if (state.currentQuestion > 0) {
-      prevQuestion(dispatch)
     }
   }
 

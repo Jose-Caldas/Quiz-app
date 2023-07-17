@@ -4,21 +4,14 @@ import Welldone from '../img/welldone.svg'
 import { useContext } from 'react'
 import { QuizContext } from '@/context/quizContext'
 import { newGame } from './Actions'
+import { newMessage } from './Actions'
 
 const Result = () => {
   const { state, dispatch } = useContext(QuizContext)
-  const [message, setMessage] = useState('')
 
   useEffect(() => {
-    if (state.score * 10 === 100)
-      return setMessage('Parabéns você acertou todas as perguntas!')
-    if (state.score * 10 < 100 && state.score * 10 > 50)
-      return setMessage('Muito bem você acertou a maioria das perguntas!')
-    if (state.score * 10 <= 50)
-      return setMessage(
-        'Obrigado pela tentativa, mais acho que você pode melhorar essa nota!'
-      )
-  }, [state.score])
+    newMessage(dispatch)
+  }, [dispatch])
 
   return (
     <div className="container">
@@ -39,7 +32,7 @@ const Result = () => {
       <div className="max-w-[400px] max-h-[400px]">
         <Image src={Welldone} alt="Game Over image" priority />
       </div>
-      <p className="mt-5 text-xl text-purple-800">{message}</p>
+      <p className="mt-5 text-xl text-purple-800">{state.message}</p>
       <button
         onClick={() => newGame(dispatch)}
         title="Reiniciar"
