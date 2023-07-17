@@ -2,6 +2,7 @@ import { QuizContextProvider } from '@/context/quizContext'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { ThemeProvider } from '@/context/themeContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,8 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <QuizContextProvider>{children}</QuizContextProvider>
+      <body className="bg-bgColor">
+        <QuizContextProvider>
+          <ThemeProvider>{children}</ThemeProvider>
+        </QuizContextProvider>
       </body>
     </html>
   )

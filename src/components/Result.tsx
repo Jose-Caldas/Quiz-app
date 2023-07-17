@@ -14,12 +14,12 @@ const Result = () => {
 
   return (
     <div className="container">
-      <h1 className="title mb-6">Game Over!</h1>
-      <p>
+      <h1 className="title mb-6">Resultado!</h1>
+      <p className="text-zinc-500">
         Pontuação:{' '}
         <span className="text-purple-800 font-bold">{state.score * 10}</span>
       </p>
-      <p>
+      <p className="text-zinc-500">
         Você acertou{' '}
         <span className="text-purple-800 font-bold">{state.score}</span> de
         {''}
