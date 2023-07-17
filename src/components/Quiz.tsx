@@ -1,12 +1,13 @@
 'use client'
 
-import { useContext, useState } from 'react'
-import { ActionType, QuizContext } from '@/context/quizContext'
+import { useContext } from 'react'
+import { QuizContext } from '@/context/quizContext'
 import Link from 'next/link'
 import Image from 'next/image'
 import Category from '../img/category.svg'
-import { nextQuestion } from './Actions'
+import { nextQuestion } from '../context/Actions'
 import Option from './Option'
+import { ActionType } from '@/context/reducer'
 
 export default function Quiz() {
   const { state, dispatch } = useContext(QuizContext)

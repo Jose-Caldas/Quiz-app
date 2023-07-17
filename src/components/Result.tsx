@@ -3,8 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Welldone from '../img/welldone.svg'
 import { useContext } from 'react'
 import { QuizContext } from '@/context/quizContext'
-import { newGame } from './Actions'
-import { newMessage } from './Actions'
+import { newGame, newMessage } from '../context/Actions'
 
 const Result = () => {
   const { state, dispatch } = useContext(QuizContext)

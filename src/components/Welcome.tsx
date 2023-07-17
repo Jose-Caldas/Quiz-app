@@ -1,13 +1,12 @@
 'use client'
 import React, { useContext } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import Quiz from '../img/quiz.svg'
 import { QuizContext } from '@/context/quizContext'
-import { changeStage, nextQuestion } from './Actions'
+import { changeStage } from '../context/Actions'
 
 function Welcome() {
-  const { state, dispatch } = useContext(QuizContext)
+  const { dispatch } = useContext(QuizContext)
 
   return (
     <div className="flex flex-col items-center justify-center p-5">
