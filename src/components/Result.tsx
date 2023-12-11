@@ -13,7 +13,7 @@ const Result = () => {
   }, [dispatch])
 
   return (
-    <div className="container">
+    <div className="container anime">
       <h1 className="title mb-6">Resultado!</h1>
       <p className="text-zinc-500">
         Pontuação:{' '}

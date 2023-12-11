@@ -28,7 +28,7 @@ export default function Quiz() {
   }
 
   return (
-    <div className="flex gap-6 md:gap-10 md:flex-row flex-col md:max-w-5xl w-full p-6">
+    <div className="flex gap-6 md:gap-10 md:flex-row flex-col md:max-w-5xl w-full p-6 anime">
       <div className="md:w-[500px]">
         <h1 className="title">Quiz de Programação</h1>
         <div className="border p-6 rounded-md mb-5">

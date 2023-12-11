@@ -9,7 +9,7 @@ function Welcome() {
   const { dispatch } = useContext(QuizContext)
 
   return (
-    <div className="flex flex-col items-center justify-center p-5">
+    <div className="flex flex-col items-center justify-center p-5 anime">
       <h1 className="md:text-3xl text-2xl mb-5 text-purple-800">
         Quiz de Programação
       </h1>

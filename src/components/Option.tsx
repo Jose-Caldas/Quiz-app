@@ -14,7 +14,7 @@ type OptionProps = {
 function Option({ option, answer, selectOption }: OptionProps) {
   const { state } = useContext(QuizContext)
   return (
-    <div className="relative  flex flex-col" onClick={selectOption}>
+    <div className="relative  flex flex-col anime" onClick={selectOption}>
       <p
         className={`text-zinc-600 mb-2 p-3 border bg-white text-base ${
           !state.answerSelected && 'hover:bg-zinc-100'
